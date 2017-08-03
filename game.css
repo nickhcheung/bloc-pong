@@ -1,4 +1,31 @@
+.title {
+  text-align: center;
+  color: black;
+  font-size: 3rem;
+}
+
+.scoreboard {
+  text-align: center;
+}
+
+#player-score {
+  position: relative;
+  display: inline-block;
+  margin-right: 9rem;
+}
+
+#comp-score {
+  position: relative;
+  display: inline-block;
+  margin-left: 9rem;
+}
+
+.canvas {
+  position: relative;
+}
+
 #c {
+  position: relative;
   padding: 0;
   margin: auto;
   display: block;
