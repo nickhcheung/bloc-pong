@@ -4,23 +4,38 @@
   font-size: 3rem;
 }
 
+#intro {
+  text-align: center;
+  border: 2px solid black;
+  height: 500px;
+  width: 800px;
+  margin: auto;
+}
+
+#start {
+  margin-top: 13rem;
+}
+
 .scoreboard {
   text-align: center;
 }
 
 #player-score {
+  visibility: hidden;
   position: relative;
   display: inline-block;
   margin-right: 9rem;
 }
 
 #comp-score {
+  visibility: hidden;
   position: relative;
   display: inline-block;
   margin-left: 9rem;
 }
 
 .canvas {
+  visibility: hidden;
   position: relative;
 }
 
@@ -30,4 +45,18 @@
   margin: auto;
   display: block;
   width: 800px;
+}
+
+.end {
+  display: none;
+  text-align: center;
+  border: 2px solid black;
+  height: 500px;
+  width: 800px;
+  margin: auto;
+}
+
+#game-end {
+  color: red;
+  margin-top: 11rem;
 }
