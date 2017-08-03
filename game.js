@@ -173,6 +173,11 @@ function onKeyDown(k){
   		player.move(player.speed);
   	}
   };
+  //Lock arrow keys from scrolling window
+  if([32, 37, 38, 39, 40].indexOf(k.keyCode) > -1) {
+        k.preventDefault();
+  };
+  //Game start
   if(k.keyCode === 32){
     if(gameStart === false){
       startScreen.style.display = "none";
