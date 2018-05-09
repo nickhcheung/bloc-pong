@@ -1,3 +1,4 @@
+var playing = true;
 var canvas = document.getElementById("c");
 var context = canvas.getContext("2d");
 
@@ -161,21 +162,25 @@ function resetTable(){
 function onKeyDown(k){
   //Up
   if(k.keyCode === 38){
-    //Stops paddle from moving above top
-  	if(player.y >= 1){
-  		player.move(-player.speed);
-  	}
+    if(playing == true){
+      //Stops paddle from moving above top
+    	if(player.y >= 1){
+    		player.move(-player.speed);
+    	}
+    }
   };
   //Down
   if(k.keyCode === 40){
-    //Stops paddle from moving below bottom
-  	if(player.y <= 240){
-  		player.move(player.speed);
-  	}
+    if(playing == true){
+      //Stops paddle from moving below bottom
+    	if(player.y <= 240){
+    		player.move(player.speed);
+    	}
+    }
   };
   //Lock arrow keys from scrolling window
   if([32, 37, 38, 39, 40].indexOf(k.keyCode) > -1) {
-        k.preventDefault();
+    k.preventDefault();
   };
   //Game start
   if(k.keyCode === 32){
@@ -186,9 +191,19 @@ function onKeyDown(k){
       compScoreboard.style.visibility = "visible";
       gameStart = true;
       step();
-    };
+    } else if(playerScore > 10 || compScore > 10){
+      location.reload(true);
+    } else if(playing == true){
+      playing = false;
+    } else {
+      playing = true;
+    }
   };
 };
+
+//Game Reset
+// location.reload(true);
+
 
 //Listen for Event(Keypress)
 function addKeyEvents(){
@@ -209,13 +224,13 @@ var endGame = document.getElementById("game-end");
 
 //Game End
 function gameEnd(){
-  if(playerScore === 11){
+  if(playerScore > 10){
     canvas.style.display = "none";
     playerScoreboard.style.display = "none";
     compScoreboard.style.display = "none";
     endGame.parentNode.style.display = "block";
     endGame.innerHTML = "YOU WIN!"
-  } else if(compScore === 11){
+  } else if(compScore > 10){
     canvas.style.display = "none";
     playerScoreboard.style.display = "none";
     compScoreboard.style.display = "none";
@@ -234,11 +249,13 @@ function render(){
 
 //Update
 var update = function(){
-  ball.move(player, computer);
-  computer.computerUpdate(ball);
-  playerScoreboard.innerHTML = "Score: " + playerScore;
-  compScoreboard.innerHTML = "Score: " + compScore;
-  gameEnd();
+  if(playing == true){
+    ball.move(player, computer);
+    computer.computerUpdate(ball);
+    playerScoreboard.innerHTML = "Score: " + playerScore;
+    compScoreboard.innerHTML = "Score: " + compScore;
+    gameEnd();
+  };
 };
 
 //Animate

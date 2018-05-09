@@ -1,2 +1,3 @@
-# bloc-pong
-A Pong replica built using Javascript and HTML5 Canvas
+# Pong
+A Pong replica by built using Javascript and HTML5 Canvas
+By: Nick Cheung

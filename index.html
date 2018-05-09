@@ -1,13 +1,21 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-    <title>Bloc Pong</title>
+    <title>Pong</title>
     <link rel="stylesheet" type="text/css" href="game.css">
   </head>
   <body>
-    <h1 class="title">Bloc Pong</h1>
+    <h1 class="title big-text">Pong</h1>
+    <h4 class="title">By: Nick Cheung</h4>
     <div id="intro">
       <h2 id="start">Press SPACEBAR to begin</h2>
+    </div>
+    <div class="leftside">
+      <h3>Rules:</h3>
+      <ul>
+        <li>Used the "up" and "down" arrow keys to control your paddle (left)</li>
+        <li>Press "SPACEBAR" to pause the game</li>
+      </ul>
     </div>
     <div class="scoreboard">
       <h3 id="player-score">Score: 0</h3>
@@ -15,10 +23,10 @@
     </div>
     <div class="canvas">
       <canvas id="c" width="500" height="300"></canvas>
-      <div class="end">
-        <h1 id="game-end"></h1>
-        <p>Refresh page to restart.</p>
-      </div>
+    </div>
+    <div class="end">
+      <h1 id="game-end"></h1>
+      <p>Press SPACEBAR to play again</p>
     </div>
     <script type="text/javascript" src="game.js"></script>
   </body>

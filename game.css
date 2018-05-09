@@ -1,7 +1,43 @@
 .title {
   text-align: center;
   color: black;
+}
+
+.big-text {
   font-size: 3rem;
+  margin-bottom: -1rem;
+}
+
+.scoreboard {
+  text-align: center;
+}
+
+.leftside {
+  position: fixed;
+  top: 6rem;
+  bottom: 0;
+  left: 2rem;
+  width: 17rem;
+}
+
+.canvas {
+  visibility: hidden;
+  display: block;
+}
+
+.end {
+  display: none;
+  text-align: center;
+  border: 2px solid black;
+  height: 500px;
+  width: 800px;
+  margin: auto;
+}
+
+#wrapper {
+    margin-left:auto;
+    margin-right:auto;
+    width:960px;
 }
 
 #intro {
@@ -14,10 +50,6 @@
 
 #start {
   margin-top: 13rem;
-}
-
-.scoreboard {
-  text-align: center;
 }
 
 #player-score {
@@ -34,26 +66,12 @@
   margin-left: 9rem;
 }
 
-.canvas {
-  visibility: hidden;
-  position: relative;
-}
-
 #c {
   position: relative;
   padding: 0;
   margin: auto;
   display: block;
   width: 800px;
-}
-
-.end {
-  display: none;
-  text-align: center;
-  border: 2px solid black;
-  height: 500px;
-  width: 800px;
-  margin: auto;
 }
 
 #game-end {
